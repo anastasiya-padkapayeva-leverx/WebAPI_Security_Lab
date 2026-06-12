@@ -1,0 +1,38 @@
+## .NET build output
+bin/
+obj/
+
+## Local database (recreated on startup via seeding)
+*.db
+*.db-shm
+*.db-wal
+
+## IDE
+.vs/
+.idea/
+*.user
+*.suo
+*.userprefs
+
+## Rider
+.idea/
+*.DotSettings.user
+
+## VS Code
+.vscode/
+
+## OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+packages/
+
+## Logs & temp
+*.log
+*.tmp
+*.temp

