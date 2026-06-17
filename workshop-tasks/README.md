@@ -20,15 +20,17 @@ Alice owns order **1**, Bob owns order **2**.
 
 ## Task index
 
+> **Recommended order:** complete tasks top-to-bottom. Tasks 03–05 require a
+> valid token, so understand authentication (Task 01) first. Task 07 builds
+> directly on the JWT token-versioning mechanism introduced in Task 01.
+
 | #   | OWASP | Task                                                                        |
 | --- | ----- | --------------------------------------------------------------------------- |
-| 01  | A05   | [SQL Injection](01-sql-injection.md)                                        |
+| 01  | A07   | [Broken JWT Validation](01-broken-jwt-validation.md)                        |
 | 02  | A02   | [Secrets in Configuration](02-secrets-in-configuration.md)                  |
-| 03  | A01   | [IDOR — Broken Object-Level Access Control](03-idor-broken-access-control.md) |
-| 04  | A01   | [Missing Function-Level Authorization](04-function-level-authorization.md)  |
-| 05  | A07   | [Broken JWT Validation](05-broken-jwt-validation.md)                        |
-| 06  | A07   | [No Brute-Force Protection](06-no-brute-force-protection.md)                |
-| 07  | A07   | [Sessions Not Revoked on Password Change](07-session-not-revoked.md)        |
-| 08  | A02   | [Developer Exception Page in Production](08-developer-exception-page.md)    |
-| 09  | A02   | [Overly Permissive CORS](09-permissive-cors.md)                             |
+| 03  | A03   | [SQL Injection](03-sql-injection.md)                                        |
+| 04  | A01   | [IDOR — Broken Object-Level Access Control](04-idor-broken-access-control.md) |
+| 05  | A01   | [Missing Function-Level Authorization](05-function-level-authorization.md)  |
+| 06  | A07   | [Sessions Not Revoked on Password Change](06-session-not-revoked.md)        |
+| 07  | A02   | [Developer Exception Page in Production](07-developer-exception-page.md)    |
 

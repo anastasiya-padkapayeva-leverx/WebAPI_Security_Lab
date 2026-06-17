@@ -21,6 +21,12 @@ public class AdminController : ControllerBase
         return Ok(await _adminService.GetUsersAsync(ct));
     }
 
+    [HttpGet("users/search")]
+    public async Task<ActionResult<IReadOnlyList<UserDetailResponse>>> SearchUsers([FromQuery] string email, CancellationToken ct)
+    {
+        return Ok(await _adminService.SearchUsersAsync(email, ct));
+    }
+
     [HttpDelete("users/{id:int}")]
     public async Task<IActionResult> DeleteUser(int id, CancellationToken ct)
     {

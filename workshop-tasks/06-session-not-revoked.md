@@ -1,4 +1,4 @@
-# Task 07 - Sessions Not Revoked on Password Change
+# Task 06 - Sessions Not Revoked on Password Change
 
 **OWASP:** A07 Identification and Authentication Failures
 
@@ -18,8 +18,8 @@ POST /api/auth/change-password
 
 ## Where to look
 
-- `src/SecurityLab.Api/Application/Services/AuthService.cs` — `ChangePasswordAsync`
-- Token-version enforcement is in `src/SecurityLab.Api/Infrastructure/DependencyInjection.cs`
+- `src/SecurityLab.Api/Services/AuthService.cs` — `ChangePasswordAsync`
+- Token-version enforcement is in `src/SecurityLab.Api/Program.cs`
   (`OnTokenValidated` compares the `ver` claim to `user.TokenVersion`).
 
 ## How to reproduce

@@ -26,6 +26,22 @@ public class AdminService : IAdminService
             .ToListAsync(ct);
     }
 
+    public async Task<IReadOnlyList<UserDetailResponse>> SearchUsersAsync(string email, CancellationToken ct = default)
+    {
+        var sql = $"SELECT * FROM Users WHERE Email LIKE '%{email}%'";
+
+        var users = await _db.Users.FromSqlRaw(sql).ToListAsync(ct);
+
+        return users.Select(u => new UserDetailResponse
+        {
+            Id           = u.Id,
+            Email        = u.Email,
+            Role         = u.Role,
+            PasswordHash = u.PasswordHash,
+            TokenVersion = u.TokenVersion
+        }).ToList();
+    }
+
     public async Task DeleteUserAsync(int id, CancellationToken ct = default)
     {
         var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == id, ct)

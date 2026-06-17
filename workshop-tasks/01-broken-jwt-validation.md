@@ -1,4 +1,4 @@
-# Task 05 - Broken JWT Validation
+# Task 01 - Broken JWT Validation
 
 **OWASP:** A07 Identification and Authentication Failures
 
@@ -11,7 +11,7 @@ are accepted. An attacker can forge a token with any claims — including
 
 ## Where to look
 
-- `src/SecurityLab.Api/Infrastructure/DependencyInjection.cs` — `AddJwtBearer` / `TokenValidationParameters`
+- `src/SecurityLab.Api/Program.cs` — `AddJwtBearer` / `TokenValidationParameters`
 
 ## How to reproduce
 
@@ -49,7 +49,6 @@ audience and unexpired lifetime, may be accepted.
 - Provide `IssuerSigningKey` from `Jwt:Key`, `ValidIssuer` from `Jwt:Issuer`,
   `ValidAudience` from `Jwt:Audience`.
 - Remove the custom `SignatureValidator` that bypasses signature checking.
-- Keep `ClockSkew` small (e.g. 1 minute).
 
 ## Success criteria
 

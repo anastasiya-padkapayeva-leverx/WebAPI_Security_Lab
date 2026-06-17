@@ -1,4 +1,4 @@
-# Task 08 - Developer Exception Page in Production
+# Task 07 - Developer Exception Page in Production
 
 **OWASP:** A02 Security Misconfiguration
 
@@ -18,7 +18,7 @@ to `DetailedErrors: true` in `appsettings.json`.
 ## How to reproduce
 
 Trigger an unhandled exception, for example a malformed SQL injection payload in
-the search endpoint (Task 01):
+the search endpoint (Task 03):
 
 ```
 GET /api/products/search?name=&sortBy=NoSuchColumn

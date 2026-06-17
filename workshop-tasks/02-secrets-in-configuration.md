@@ -16,7 +16,7 @@ access to the repository (or the deployed file) gets all of them.
 ## How to reproduce
 
 - Open `appsettings.json` and read the credentials directly — no exploit needed.
-- Combine with **Task 08**: trigger an unhandled exception and the developer
+- Combine with **Task 07**: trigger an unhandled exception and the developer
   exception page / detailed errors can surface configuration values to callers.
 
 ## Symptoms
