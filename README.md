@@ -1,7 +1,7 @@
 # Web API Security Lab
 
 A deliberately **insecure** ASP.NET Core Web API for a hands-on security
-workshop. Attendees reproduce, locate and fix 9 vulnerabilities drawn from the
+workshop. Attendees reproduce, locate and fix 7 vulnerabilities drawn from the
 OWASP Top 10 categories covered in the workshop article (A01, A02, A05, A07).
 
 > ⚠️ **Intentionally vulnerable.** Run it only on your local machine or an
@@ -65,15 +65,13 @@ Then open Swagger at **http://localhost:5080/swagger**.
 
 | #   | OWASP | Vulnerability                            | Main location                          |
 | --- | ----- | ---------------------------------------- | -------------------------------------- |
-| 01  | A05   | SQL Injection                            | `Services/ProductService.cs`           |
+| 01  | A07   | Broken JWT validation                    | `Program.cs`                           |
 | 02  | A02   | Secrets in configuration                 | `appsettings.json`                     |
-| 03  | A01   | IDOR (object-level access)               | `Services/OrderService.cs`             |
-| 04  | A01   | Missing function-level authorization     | `Controllers/AdminController.cs`       |
-| 05  | A07   | Broken JWT validation                    | `Program.cs`                           |
-| 06  | A07   | No brute-force protection                | `Services/AuthService.cs`              |
-| 07  | A07   | Sessions not revoked on password change  | `Services/AuthService.cs`, `Program.cs` |
-| 08  | A02   | Developer exception page in production   | `Program.cs`, `appsettings.json`       |
-| 09  | A02   | Overly permissive CORS                   | `Program.cs`                           |
+| 03  | A05   | SQL Injection                            | `Services/ProductService.cs`           |
+| 04  | A01   | IDOR (object-level access)               | `Services/OrderService.cs`             |
+| 05  | A01   | Missing function-level authorization     | `Controllers/AdminController.cs`       |
+| 06  | A07   | Sessions not revoked on password change  | `Services/AuthService.cs`, `Program.cs` |
+| 07  | A02   | Developer exception page in production   | `Program.cs`, `appsettings.json`       |
 
 Every planted flaw is tagged with a `// WORKSHOP:` comment. Searching the
 solution for `WORKSHOP` reveals them all — encourage attendees to find them by

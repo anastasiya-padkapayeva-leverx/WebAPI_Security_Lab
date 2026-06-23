@@ -28,7 +28,7 @@ Alice owns order **1**, Bob owns order **2**.
 | --- | ----- | --------------------------------------------------------------------------- |
 | 01  | A07   | [Broken JWT Validation](01-broken-jwt-validation.md)                        |
 | 02  | A02   | [Secrets in Configuration](02-secrets-in-configuration.md)                  |
-| 03  | A03   | [SQL Injection](03-sql-injection.md)                                        |
+| 03  | A05   | [SQL Injection](03-sql-injection.md)                                        |
 | 04  | A01   | [IDOR — Broken Object-Level Access Control](04-idor-broken-access-control.md) |
 | 05  | A01   | [Missing Function-Level Authorization](05-function-level-authorization.md)  |
 | 06  | A07   | [Sessions Not Revoked on Password Change](06-session-not-revoked.md)        |
