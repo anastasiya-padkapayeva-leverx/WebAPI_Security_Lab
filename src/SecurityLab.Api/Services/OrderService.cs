@@ -52,8 +52,8 @@ public class OrderService : IOrderService
                 .Select(i => new OrderItem
                 {
                     ProductName = i.ProductName,
-                    Quantity    = i.Quantity,
-                    UnitPrice   = i.UnitPrice
+                    Quantity = i.Quantity,
+                    UnitPrice = i.UnitPrice
                 })
                 .ToList()
         };

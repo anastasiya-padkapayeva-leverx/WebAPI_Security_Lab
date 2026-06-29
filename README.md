@@ -73,9 +73,6 @@ Then open Swagger at **http://localhost:5080/swagger**.
 | 06  | A07   | Sessions not revoked on password change  | `Services/AuthService.cs`, `Program.cs` |
 | 07  | A02   | Developer exception page in production   | `Program.cs`, `appsettings.json`       |
 
-Every planted flaw is tagged with a `// WORKSHOP:` comment. Searching the
-solution for `WORKSHOP` reveals them all — encourage attendees to find them by
-testing the API **before** searching.
 
 ## Workshop tasks
 
